@@ -1,0 +1,5 @@
+select d.department_description
+from  km_person p, km_department d, km_salaries s
+where s.person_id = p.person_id
+and p.department_id = d.department_id
+and s.salary in (select max(salary) from km_salaries);
